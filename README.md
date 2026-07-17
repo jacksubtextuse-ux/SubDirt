@@ -17,6 +17,18 @@ this repo).
 | [`skills/site-specifics`](skills/site-specifics) | 📋 Spec only | Physical/environmental layer: flood, karst, radon, USTs, utilities, adjacency → diligence triggers. |
 | [`skills/risks-mitigants`](skills/risks-mitigants) | 📋 Spec only | Synthesis: 4-dimension risk/mitigant table, consolidated data-needed list, ordered next steps. |
 | [`skills/feasibility-memo`](skills/feasibility-memo) | 📋 Spec only — build last | Orchestrator: composes all modules into the 10-section go/no-go memo with the ULI value-vs-cost test. Rent/supply inputs from the Subtext research DB (`subtext-sql` MCP) — the edge over the DirtAI original. |
+| [`skills/permit-history`](skills/permit-history) | 📋 Spec + live pilot | Pull public permit records for past projects (benchmarking) and comps (supply timing) from municipal portals. |
+
+## Run loop & market registry
+
+- **Run loop**: `skills/student-housing-entitlements/references/run-loop.md` — the formalized
+  6-phase protocol for a Z&E memo run (intake → parallel research agents → reconcile → spec →
+  render → deliver, with a mandatory retro that feeds learnings back here). Proven on the VERVE
+  Clemson live run.
+- **Market source registry**: `data/market-sources.json` — per-jurisdiction research infrastructure
+  (code host + fetchable route, zoning map, parcel GIS, permit portal, agenda portal) with
+  fetchability warnings (stale code snapshots, 403-ing GIS). Seeded with verified entries; every run
+  and registry agent adds to it. This is how "site-specific zoning across all markets" scales.
 
 ## Workstreams
 

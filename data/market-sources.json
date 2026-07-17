@@ -1,0 +1,55 @@
+{
+  "_schema": {
+    "market": "Subtext market-folder name",
+    "jurisdiction": "legal entity that zones the land (one entry per jurisdiction — some markets have several)",
+    "type": "city|borough|township|county|consolidated",
+    "code": {
+      "platform": "municode|amlegal|encodeplus|ecode360|custom",
+      "url": "authoritative zoning code URL",
+      "fetchable_route": "machine-fetchable access pattern (print endpoints etc.); null if none found",
+      "codified_through": "codification date/ordinance if shown — CHECK THIS; stale snapshots have burned runs"
+    },
+    "zoning_map": { "url": "", "parcel_queryable": "bool — can you resolve a parcel's district" },
+    "parcel_gis": { "url": "", "provider": "", "fetchable": "bool — false if 403/JS-blocked" },
+    "permits": { "url": "", "system": "accela|energov|citizenserve|opengov|smartgov|custom", "public_search": "bool" },
+    "agendas": { "url": "", "platform": "legistar|granicus|civicclerk|civicplus|custom" },
+    "verified": "date last verified",
+    "notes": "strategy-changing facts: UDO rewrites, moratoria, overlay systems, student-housing ordinances"
+  },
+  "markets": [
+    {
+      "market": "Clemson",
+      "jurisdiction": "City of Clemson, SC",
+      "type": "city",
+      "code": {
+        "platform": "encodeplus",
+        "url": "https://online.encodeplus.com/regs/clemson-sc/",
+        "fetchable_route": "doc-view.aspx?secid=####&print=1 serves LIVE adopted text (key secids: 3554 dimensional tables, 3742 CM conditional standards, 3715 amendments/rezoning process, 3693 BAR, 3697 AR district standards). WARNING: the eReader flipbook pages are a stale 12/5/2022 snapshot — live print endpoint controls.",
+        "codified_through": "live endpoint current; snapshot codified through Ord. CC-2022-26 (12/5/2022)"
+      },
+      "zoning_map": { "url": "https://www.clemsoncity.org/DocumentCenter/View/1676/2026-City-of-Clemson-Zoning-Map?bidId=", "parcel_queryable": false },
+      "parcel_gis": { "url": "https://qpublic.schneidercorp.com/Application.aspx?AppID=927", "provider": "qPublic/Schneider (Pickens County)", "fetchable": false },
+      "permits": { "url": null, "system": null, "public_search": null },
+      "agendas": { "url": "https://www.clemsoncity.org/AgendaCenter", "platform": "civicplus" },
+      "verified": "2026-07-17",
+      "notes": "CM district substantially amended post-2022 ($30/SF contribution >5 stories; Strode-block 3-story base/5-story cap; 30-ft rear Type E buffer). No FAR/density/coverage caps in CM. All large PBSH since 2023 entitled via negotiated PD, not straight rezoning. BAR Certificate of Approval precedes building permit. Election: 3 council seats Nov 3, 2026."
+    },
+    {
+      "market": "Kentucky (Lexington)",
+      "jurisdiction": "Lexington-Fayette Urban County Government (LFUCG), KY",
+      "type": "consolidated",
+      "code": {
+        "platform": "amlegal",
+        "url": "https://codelibrary.amlegal.com/codes/lexingtonfayettecoky/latest/lexingtonfayettecoky_zone/0-0-0-1",
+        "fetchable_route": "amlegal pages fetch directly; Zoneomics mirror at zoneomics.com/code/lexington-KY as backup",
+        "codified_through": "observed through Ord. 050-2025 (B-3 amendment, eff. 2025-07-01)"
+      },
+      "zoning_map": { "url": "https://www.lexingtonky.gov/working/development-zoning/zoning-ordinance", "parcel_queryable": null },
+      "parcel_gis": { "url": null, "provider": "Fayette County PVA", "fetchable": null },
+      "permits": { "url": null, "system": null, "public_search": null },
+      "agendas": { "url": null, "platform": null },
+      "verified": "2026-07-09",
+      "notes": "One countywide ordinance (no city/county split). No minimum parking citywide. Use variances prohibited (§7-6(b)(2)). Comp plan = Imagine Lexington 2045 (Placetypes via Placebuilder; KRS 100.213 findings). WARNING: platform 'future land use' fields are PVA current-use codes, NOT placetypes. Council rejected UK-area student rezoning 8-7 Nov 2025 (Aylesford/Core Spaces — historic demolition). Infill & Redevelopment Area allows 50% BoA parking reduction."
+    }
+  ]
+}
