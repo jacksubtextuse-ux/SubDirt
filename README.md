@@ -18,6 +18,22 @@ this repo).
 | [`skills/risks-mitigants`](skills/risks-mitigants) | 📋 Spec only | Synthesis: 4-dimension risk/mitigant table, consolidated data-needed list, ordered next steps. |
 | [`skills/feasibility-memo`](skills/feasibility-memo) | 📋 Spec only — build last | Orchestrator: composes all modules into the 10-section go/no-go memo with the ULI value-vs-cost test. Rent/supply inputs from the Subtext research DB (`subtext-sql` MCP) — the edge over the DirtAI original. |
 
+## Workstreams
+
+**Jack → Zoning & Entitlement Memorandum** (zoning-compliance + entitlements skills, combined memo).
+**Coworker → Feasibility Memo** (see `HANDOFF.md` — interface contract, shared infrastructure, data
+sources). The feasibility memo consumes the Z&E memo's determinations; the two must never disagree
+on entitlement posture.
+
+## Branding & document generation
+
+`assets/branding.md` is the brand source of truth (Everest Green / Sage / Lime palette, Arial,
+document conventions); `assets/subdirt_logo.png` is the official mark.
+`skills/student-housing-entitlements/scripts/build_branded_memo.py` renders any SubDirt Word memo
+from a JSON spec (schema at the top of the script) — reuse it for every Word deliverable. A working
+demo (the UK South Limestone Z&E memo re-rendered through the pipeline) lives on SharePoint under
+`SubDirt AI/Demo Output/`.
+
 ## House rules (apply to every skill)
 
 - Primary sources only; **never** estimate, infer "typical" values, or carry numbers from memory.
