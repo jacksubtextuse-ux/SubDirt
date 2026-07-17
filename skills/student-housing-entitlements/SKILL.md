@@ -80,7 +80,12 @@ Entitlement analysis has two expensive failure modes:
   member-by-member reasoning, and conditions (pairs with the city-council-transcript-analysis skill;
   ingest its output directly if the user has run it).
 - A **massing or program** — if supplied, note where scale itself changes the path (e.g., a size cap
-  that forces rezoning, a height that triggers extra review).
+  that forces rezoning, a height that triggers extra review). State which construction typology the
+  massing implies and whether the recommended path carries it — Subtext underwrites sites against
+  multiple typologies (5-over-2 podium, mid-rise, Type I high-rise; see
+  `docs/subtext-product-profile.md` in the SubDirt repo), so where the by-right envelope carries the
+  podium product but not the taller one, say exactly that: it is often the deciding fact between a
+  development-plan path and a rezoning.
 
 If the site's current zoning district is unknown and no source establishes it, stop and ask — the
 entire analysis keys off the district.

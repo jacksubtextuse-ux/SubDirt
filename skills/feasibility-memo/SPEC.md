@@ -31,6 +31,14 @@ program derivation → fees + cost → DB-driven market/rent → value → deter
 The "one program" (beds/units/stories/GSF/parking) is fixed once in §4 and every later section uses
 it — no section-local program drift.
 
+**Program derivation speaks Subtext typologies.** The dev team underwrites each site against multiple
+construction types (5-over-2 podium, mid-rise, Type I high-rise — see
+`docs/subtext-product-profile.md`), so §4 should derive the program per viable typology for the
+envelope (or take the typology from a provided massing/proforma — the standardized proforma is the
+`SH Template Model w P3 Screener` .xlsm), pick one for "the one program," and show the rejected
+typologies with the reason (envelope, path, or cost). Cost stack in §6 is typology-dependent —
+podium vs. Type I is a different $/SF world.
+
 **House rules.** Every figure is platform data, cited public source, or a labeled assumption. Section
 verdicts (GO / GO-with-conditions / FAIL) per dimension. Sensitivities recompute the margin, one
 variable at a time. Student framing throughout: beds not units, per-bed rents, August delivery cliff,
