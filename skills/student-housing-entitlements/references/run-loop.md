@@ -16,10 +16,14 @@ one pass. Follow the phases in order; Phases 1's two research tracks run **in pa
 3. **Extract exhibits** — aerials, zoning-map crops, parcel maps embedded in the workbook
    (`zipfile` → `xl/media/`). Re-encode via PIL to PNG (python-docx rejects exotic encodings). Stage
    in the output folder.
-4. **Sources check:** market folder under `Building Zoning Check\Markets\{Market}` (primary source if
-   populated) and `data/market-sources.json` in the SubDirt repo (code host, GIS, permit, agenda
-   portals — with fetchability notes). If the market has no registry entry, the Phase 1 code agent
-   also captures registry fields; merge them back after the run.
+4. **Sources check — online-first.** `data/market-sources.json` in the SubDirt repo is the source
+   map: code host + fetchable route, ArcGIS REST zoning services, parcel GIS, permit and agenda
+   portals, with fetchability warnings. Muni code is read from the **live online host**, never from
+   memory and not from curated document folders (the legacy zoning skill's market-folder workflow is
+   dead — its analysis structure survives in Phase 2, its sourcing doesn't). If the market has no
+   registry entry, the Phase 1 code agent also captures registry fields; merge them back after the
+   run. If a user hands you code documents directly, use them, but date-check them against the live
+   host — local copies go stale.
 5. Create the output folder next to the input (`<input folder>\Finished Analysis\`), or the market
    folder's `Finished Analysis` when running from a market-folder context.
 

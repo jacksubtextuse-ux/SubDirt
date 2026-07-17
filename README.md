@@ -11,7 +11,7 @@ this repo).
 
 | Module | Status | What it does |
 |---|---|---|
-| [`skills/zoning-compliance`](skills/zoning-compliance) | ✅ Built (v1, Cowork-validated) | Building-vs-code compliance matrix (Word + Excel); district breakdowns. Columbia MO + Gainesville tested. |
+| [`skills/zoning-compliance`](skills/zoning-compliance) | ⚠️ Legacy — mine it, don't run it | The market-folder / muni-code-document workflow is dead. What's still gold: the **analysis structure** — compliance-matrix vocabulary (PASS/PASS*/FAIL/VERIFY/PD), by-right vs. PD-forward framing, `analytical-framework.md`, `pd-strategy-guide.md`, the proforma parser. New runs get code text from **online sources via the registry** (see run loop), not curated folders. |
 | [`skills/student-housing-dev-fees`](skills/student-housing-dev-fees) | ✅ Built | Exhaustive, primary-source fee schedule from an address; jurisdiction stack + supremacy resolution; branded Excel workbook via bundled script. |
 | [`skills/student-housing-entitlements`](skills/student-housing-entitlements) | 🆕 Built — needs a live-market shakedown | Entitlement path determination: use classification, path enumeration/ranking, bodies + timelines, plan conformance, precedent-based political risk, conditions forecast. Word memo + Excel tracker. |
 | [`skills/site-specifics`](skills/site-specifics) | 📋 Spec only | Physical/environmental layer: flood, karst, radon, USTs, utilities, adjacency → diligence triggers. |
