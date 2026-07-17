@@ -216,6 +216,254 @@
    },
    "verified": "2026-07-17",
    "notes": "MACHINE ROUTE: ArcGIS REST https://maps.fayetteville-ar.gov/server/rest/services/Zoning/MapServer (verified; JSON, 2000-record cap) incl. overlays: Hillside/Hilltop, Design Overlay, Enduring Green Network, Streamside Protection. UDC = Title XV (Ch. 160/161). New Sec. 161.36 Urban Corridor district per snippets - unverified. City says in-person map at 125 W Mountain is official."
+  },
+  {
+   "market": "Michigan (Ann Arbor)",
+   "jurisdiction": "City of Ann Arbor, MI",
+   "type": "city",
+   "code": {
+    "platform": "municode",
+    "url": "https://www.a2gov.org/planning/codes-and-guidelines/",
+    "fetchable_route": "OFFICIAL UDC PDF fetches directly: https://www.a2gov.org/media/ivuhzlww/udc-edition-11a-8-10-25.pdf (4.1MB)",
+    "codified_through": "UDC Edition 11A, eff. 2025-08-10, through Ord. 25-25; 4 ordinances pending codification"
+   },
+   "zoning_map": {
+    "url": "https://www.a2gov.org/zoningmap",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://gisappsecure.ewashtenaw.org/mapwashtenaw/",
+    "provider": "Washtenaw County MapWashtenaw (ArcGIS)",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://stream.a2gov.org/EnerGov_Prod/SelfService",
+    "system": "energov",
+    "public_search": true
+   },
+   "agendas": {
+    "url": "https://a2gov.legistar.com/Calendar.aspx",
+    "platform": "legistar"
+   },
+   "verified": "2026-07-17",
+   "notes": "REST routes verified: zoning polygons (ZONINGCLASS) utility.arcgis.com/usrsvcs/servers/6173e81c20e349dbb37e0271f63eae04/rest/services/CommunityPlanningSymbols/MapServer/8; parcels TaxParcelsAll FeatureServer/0 (faa9da45c00d49a49ad2a6db0dc1d231). TC1 Transit Corridor district = dense by-right corridor housing. STREAM (EnerGov) covers post-3/2022 permits; older in A2Trak archive."
+  },
+  {
+   "market": "North Carolina (Chapel Hill)",
+   "jurisdiction": "Town of Chapel Hill, NC",
+   "type": "city",
+   "code": {
+    "platform": "municode",
+    "url": "https://library.municode.com/nc/chapel_hill/codes/code_of_ordinances?nodeId=CO_APXALAUSMA",
+    "fetchable_route": "Municode 403; zoning REST: https://gis-portal.townofchapelhill.org/server/rest/services/OpenData/Zoning_Districts/MapServer (verified)",
+    "codified_through": "unverified (403)"
+   },
+   "zoning_map": {
+    "url": "https://gis-portal.townofchapelhill.org/server/rest/services/OpenData/Zoning_Districts/MapServer",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://gis.orangecountync.gov/orangeNCGIS/default.htm",
+    "provider": "Orange County GIS; machine route: gis-portal OpenData/OrangeCountyParcels FeatureServer (verified JSON)",
+    "fetchable": false
+   },
+   "permits": {
+    "url": "https://chapelhillnc.portal.opengov.com/",
+    "system": "opengov",
+    "public_search": false
+   },
+   "agendas": {
+    "url": "https://chapelhill.legistar.com/Calendar.aspx",
+    "platform": "legistar"
+   },
+   "verified": "2026-07-17",
+   "notes": "LUMO REWRITE ACTIVE - first public draft expected summer 2026 (engage.chapelhillnc.gov/re-writing-our-rules-lumo-update); Jan 2026 interim amendments adopted (incl. Mixed-Use Village district). MAX 4 UNRELATED PERSONS/UNIT (Town Code Ch. 9, $100-500/day fines) - binding on by-the-bed program design. Blue Hill District form-based code = by-right fast path. Use gis-portal host, not legacy gisweb."
+  },
+  {
+   "market": "Pennsylvania State (State College)",
+   "jurisdiction": "State College Borough, PA",
+   "type": "borough",
+   "code": {
+    "platform": "ecode360",
+    "url": "https://ecode360.com/32909719",
+    "fetchable_route": "none - eCode360 403s (no print-endpoint workaround found)",
+    "codified_through": "2025-04-21 per search snippet (unverified)"
+   },
+   "zoning_map": {
+    "url": "https://content.civicplus.com/api/assets/pa-statecollege/5df40060-1459-4621-a87d-20c6d2c27499/scb-zoning-map-12-07-2021-1-.pdf",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://gissites4.centrecountypa.gov/arcgis/rest/services",
+    "provider": "Centre County ArcGIS Enterprise - PublicParcelViewer: Parcels=layer 65, Unofficial County Zoning=layer 70 (verified)",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://www.crcog.net/crca",
+    "system": "custom",
+    "public_search": false
+   },
+   "agendas": {
+    "url": "https://www.statecollegepa.us/606/Borough-Council-Agendas-Minutes",
+    "platform": "civicplus"
+   },
+   "verified": "2026-07-17",
+   "notes": "COMPREHENSIVE ZONING REWRITE in progress (regs date to 1959): revised draft ~summer 2026; student-housing capacity + 11-story downtown affordability bonus are live issues - monitor before underwriting. Permits via Centre Region Code Administration (regional). Rental permit required for ANY non-owner-occupied unit; Nuisance Property Ordinance can suspend permits. Campus area spans Borough + College/Ferguson/Patton Townships (separate entries)."
+  },
+  {
+   "market": "Pennsylvania State (State College)",
+   "jurisdiction": "College Township, PA",
+   "type": "township",
+   "code": {
+    "platform": "ecode360",
+    "url": "https://ecode360.com/CO1052",
+    "fetchable_route": "none - 403",
+    "codified_through": null
+   },
+   "zoning_map": {
+    "url": null,
+    "parcel_queryable": null
+   },
+   "parcel_gis": {
+    "url": null,
+    "provider": "Centre County (see Borough entry)",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://www.crcog.net/crca",
+    "system": "custom",
+    "public_search": false
+   },
+   "agendas": {
+    "url": null,
+    "platform": null
+   },
+   "verified": "2026-07-17",
+   "notes": "AGO map college-township.maps.arcgis.com id=574cf31b072f468f8710b960c870c740 + 2026 zoning map PDF (DocumentCenter/View/3059) - linked, not fetched. Dale Summit redevelopment + zoning revisions active."
+  },
+  {
+   "market": "Pennsylvania State (State College)",
+   "jurisdiction": "Ferguson Township, PA",
+   "type": "township",
+   "code": {
+    "platform": "ecode360",
+    "url": "https://ecode360.com/FE3697/home",
+    "fetchable_route": "none - 403 (Ch. 27 Zoning = ecode360.com/30847049)",
+    "codified_through": "Ch. 27 adopted Ord. 1049 (11/18/2019) per search (unverified)"
+   },
+   "zoning_map": {
+    "url": null,
+    "parcel_queryable": null
+   },
+   "parcel_gis": {
+    "url": null,
+    "provider": "Centre County (see Borough entry)",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://www.crcog.net/crca",
+    "system": "custom",
+    "public_search": false
+   },
+   "agendas": {
+    "url": null,
+    "platform": null
+   },
+   "verified": "2026-07-17",
+   "notes": ""
+  },
+  {
+   "market": "Pennsylvania State (State College)",
+   "jurisdiction": "Patton Township, PA",
+   "type": "township",
+   "code": {
+    "platform": "ecode360",
+    "url": "https://ecode360.com/PA1476",
+    "fetchable_route": "none - 403",
+    "codified_through": null
+   },
+   "zoning_map": {
+    "url": "https://www.crcog.net/vertical/sites/%7B6AD7E2DC-ECE4-41CD-B8E1-BAC6A6336348%7D/uploads/1117_Official_Patton_Zoning_Map.pdf",
+    "parcel_queryable": false
+   },
+   "parcel_gis": {
+    "url": null,
+    "provider": "Centre County (see Borough entry)",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://www.crcog.net/crca",
+    "system": "custom",
+    "public_search": false
+   },
+   "agendas": {
+    "url": null,
+    "platform": null
+   },
+   "verified": "2026-07-17",
+   "notes": "Rental housing permits required (township EPZ dept). Zoning map PDF fetched OK from CRCOG host."
+  },
+  {
+   "market": "Tennessee (Knoxville)",
+   "jurisdiction": "City of Knoxville, TN",
+   "type": "city",
+   "code": {
+    "platform": "municode",
+    "url": "https://library.municode.com/tn/knoxville/codes/code_of_ordinances?nodeId=APXBZOCO",
+    "fetchable_route": "Municode 403; zoning REST: https://services1.arcgis.com/QWaOgwdmpqI9HUzf/arcgis/rest/services/KnoxvilleKnoxCountyZoning/FeatureServer (verified; layer 2 = combined zoning, updated monthly)",
+    "codified_through": "Recode Knoxville eff. 1/1/2020 (confirmed at knoxplanning.org)"
+   },
+   "zoning_map": {
+    "url": "https://www.kgis.org/kgismaps/",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://www.kgis.org/kgismaps/",
+    "provider": "KGIS (city-county-KUB joint); kgis.org/arcgis REST 401s bots - use the AGO org services1.arcgis.com/QWaOgwdmpqI9HUzf",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://aca-prod.accela.com/KNOXVILLE/Cap/CapHome.aspx?module=Building",
+    "system": "accela",
+    "public_search": true
+   },
+   "agendas": {
+    "url": "https://www.knoxvilletn.gov/government/city_council/city_council_agenda_minutes",
+    "platform": "custom (CivicLive; Planning Commission: knoxplanning.org/agenda, PDFs to 2001)"
+   },
+   "verified": "2026-07-17",
+   "notes": "Knoxville-Knox County Planning is a joint agency. AGO org also carries County_Zoning, Zoning_Archive, Categorical_Zoning_Changes (documents Recode reclassifications). Accela search form visible without login (postbacks need JS). Planning Commission meets 2nd Thursday."
+  },
+  {
+   "market": "Florida (Gainesville)",
+   "jurisdiction": "City of Gainesville, FL",
+   "type": "city",
+   "code": {
+    "platform": "municode",
+    "url": "https://library.municode.com/fl/gainesville/codes/code_of_ordinances?nodeId=PTIICOOR_CH30LADECO",
+    "fetchable_route": "Municode 403; zoning REST: https://services1.arcgis.com/MiBZ4u97DWldovjI/arcgis/rest/services/zoning6/FeatureServer layer 4 (verified; returns ZONECODE + LDC section refs)",
+    "codified_through": "unverified (403)"
+   },
+   "zoning_map": {
+    "url": "https://hub.arcgis.com/maps/acgm::city-of-gainesville-zoning",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://qpublic.schneidercorp.com/Application.aspx?AppID=1081",
+    "provider": "Alachua County Property Appraiser via qPublic/Schneider",
+    "fetchable": false
+   },
+   "permits": {
+    "url": "https://www4.citizenserve.com/Portal/PortalController?Action=showHomePage&ctzPagePrefix=Portal_&installationID=308",
+    "system": "citizenserve",
+    "public_search": true
+   },
+   "agendas": {
+    "url": "https://pub-cityofgainesville.escribemeetings.com/",
+    "platform": "custom (eScribe; gainesville.legistar.com is RETIRED as of 9/30/2022 but still live - do not trust)"
+   },
+   "verified": "2026-07-17",
+   "notes": "Alachua County AGO org hosts ALL 9 municipalities zoning (zoning6 layers 0-10; dedicated ZoningGainesville FeatureServer view). City GIS server gis.cityofgainesville.org is DEAD. Citizenserve (PermitGNV) allows anonymous search of permits/development projects/code enforcement. Volatile policy history: 2022 single-family-zoning elimination repealed 4-3 in Apr 2023; 2024 small-lot pivot; inclusionary zoning passed 6-1 (ordinance unverified)."
   }
  ]
 }
