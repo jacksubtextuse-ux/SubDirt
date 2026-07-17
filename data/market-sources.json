@@ -1,55 +1,221 @@
 {
-  "_schema": {
-    "market": "Subtext market-folder name",
-    "jurisdiction": "legal entity that zones the land (one entry per jurisdiction — some markets have several)",
-    "type": "city|borough|township|county|consolidated",
-    "code": {
-      "platform": "municode|amlegal|encodeplus|ecode360|custom",
-      "url": "authoritative zoning code URL",
-      "fetchable_route": "machine-fetchable access pattern (print endpoints etc.); null if none found",
-      "codified_through": "codification date/ordinance if shown — CHECK THIS; stale snapshots have burned runs"
-    },
-    "zoning_map": { "url": "", "parcel_queryable": "bool — can you resolve a parcel's district" },
-    "parcel_gis": { "url": "", "provider": "", "fetchable": "bool — false if 403/JS-blocked" },
-    "permits": { "url": "", "system": "accela|energov|citizenserve|opengov|smartgov|custom", "public_search": "bool" },
-    "agendas": { "url": "", "platform": "legistar|granicus|civicclerk|civicplus|custom" },
-    "verified": "date last verified",
-    "notes": "strategy-changing facts: UDO rewrites, moratoria, overlay systems, student-housing ordinances"
+ "_schema": {
+  "market": "Subtext market-folder name",
+  "jurisdiction": "legal entity that zones the land (one entry per jurisdiction — some markets have several)",
+  "type": "city|borough|township|county|consolidated",
+  "code": {
+   "platform": "municode|amlegal|encodeplus|ecode360|custom",
+   "url": "authoritative zoning code URL",
+   "fetchable_route": "machine-fetchable access pattern (print endpoints etc.); null if none found",
+   "codified_through": "codification date/ordinance if shown — CHECK THIS; stale snapshots have burned runs"
   },
-  "markets": [
-    {
-      "market": "Clemson",
-      "jurisdiction": "City of Clemson, SC",
-      "type": "city",
-      "code": {
-        "platform": "encodeplus",
-        "url": "https://online.encodeplus.com/regs/clemson-sc/",
-        "fetchable_route": "doc-view.aspx?secid=####&print=1 serves LIVE adopted text (key secids: 3554 dimensional tables, 3742 CM conditional standards, 3715 amendments/rezoning process, 3693 BAR, 3697 AR district standards). WARNING: the eReader flipbook pages are a stale 12/5/2022 snapshot — live print endpoint controls.",
-        "codified_through": "live endpoint current; snapshot codified through Ord. CC-2022-26 (12/5/2022)"
-      },
-      "zoning_map": { "url": "https://www.clemsoncity.org/DocumentCenter/View/1676/2026-City-of-Clemson-Zoning-Map?bidId=", "parcel_queryable": false },
-      "parcel_gis": { "url": "https://qpublic.schneidercorp.com/Application.aspx?AppID=927", "provider": "qPublic/Schneider (Pickens County)", "fetchable": false },
-      "permits": { "url": null, "system": null, "public_search": null },
-      "agendas": { "url": "https://www.clemsoncity.org/AgendaCenter", "platform": "civicplus" },
-      "verified": "2026-07-17",
-      "notes": "CM district substantially amended post-2022 ($30/SF contribution >5 stories; Strode-block 3-story base/5-story cap; 30-ft rear Type E buffer). No FAR/density/coverage caps in CM. All large PBSH since 2023 entitled via negotiated PD, not straight rezoning. BAR Certificate of Approval precedes building permit. Election: 3 council seats Nov 3, 2026."
-    },
-    {
-      "market": "Kentucky (Lexington)",
-      "jurisdiction": "Lexington-Fayette Urban County Government (LFUCG), KY",
-      "type": "consolidated",
-      "code": {
-        "platform": "amlegal",
-        "url": "https://codelibrary.amlegal.com/codes/lexingtonfayettecoky/latest/lexingtonfayettecoky_zone/0-0-0-1",
-        "fetchable_route": "amlegal pages fetch directly; Zoneomics mirror at zoneomics.com/code/lexington-KY as backup",
-        "codified_through": "observed through Ord. 050-2025 (B-3 amendment, eff. 2025-07-01)"
-      },
-      "zoning_map": { "url": "https://www.lexingtonky.gov/working/development-zoning/zoning-ordinance", "parcel_queryable": null },
-      "parcel_gis": { "url": null, "provider": "Fayette County PVA", "fetchable": null },
-      "permits": { "url": null, "system": null, "public_search": null },
-      "agendas": { "url": null, "platform": null },
-      "verified": "2026-07-09",
-      "notes": "One countywide ordinance (no city/county split). No minimum parking citywide. Use variances prohibited (§7-6(b)(2)). Comp plan = Imagine Lexington 2045 (Placetypes via Placebuilder; KRS 100.213 findings). WARNING: platform 'future land use' fields are PVA current-use codes, NOT placetypes. Council rejected UK-area student rezoning 8-7 Nov 2025 (Aylesford/Core Spaces — historic demolition). Infill & Redevelopment Area allows 50% BoA parking reduction."
-    }
-  ]
+  "zoning_map": {
+   "url": "",
+   "parcel_queryable": "bool — can you resolve a parcel's district"
+  },
+  "parcel_gis": {
+   "url": "",
+   "provider": "",
+   "fetchable": "bool — false if 403/JS-blocked"
+  },
+  "permits": {
+   "url": "",
+   "system": "accela|energov|citizenserve|opengov|smartgov|custom",
+   "public_search": "bool"
+  },
+  "agendas": {
+   "url": "",
+   "platform": "legistar|granicus|civicclerk|civicplus|custom"
+  },
+  "verified": "date last verified",
+  "notes": "strategy-changing facts: UDO rewrites, moratoria, overlay systems, student-housing ordinances"
+ },
+ "markets": [
+  {
+   "market": "Clemson",
+   "jurisdiction": "City of Clemson, SC",
+   "type": "city",
+   "code": {
+    "platform": "encodeplus",
+    "url": "https://online.encodeplus.com/regs/clemson-sc/",
+    "fetchable_route": "doc-view.aspx?secid=####&print=1 serves LIVE adopted text (key secids: 3554 dimensional tables, 3742 CM conditional standards, 3715 amendments/rezoning process, 3693 BAR, 3697 AR district standards). WARNING: the eReader flipbook pages are a stale 12/5/2022 snapshot — live print endpoint controls.",
+    "codified_through": "live endpoint current; snapshot codified through Ord. CC-2022-26 (12/5/2022)"
+   },
+   "zoning_map": {
+    "url": "https://www.clemsoncity.org/DocumentCenter/View/1676/2026-City-of-Clemson-Zoning-Map?bidId=",
+    "parcel_queryable": false
+   },
+   "parcel_gis": {
+    "url": "https://qpublic.schneidercorp.com/Application.aspx?AppID=927",
+    "provider": "qPublic/Schneider (Pickens County)",
+    "fetchable": false
+   },
+   "permits": {
+    "url": null,
+    "system": null,
+    "public_search": null
+   },
+   "agendas": {
+    "url": "https://www.clemsoncity.org/AgendaCenter",
+    "platform": "civicplus"
+   },
+   "verified": "2026-07-17",
+   "notes": "CM district substantially amended post-2022 ($30/SF contribution >5 stories; Strode-block 3-story base/5-story cap; 30-ft rear Type E buffer). No FAR/density/coverage caps in CM. All large PBSH since 2023 entitled via negotiated PD, not straight rezoning. BAR Certificate of Approval precedes building permit. Election: 3 council seats Nov 3, 2026."
+  },
+  {
+   "market": "Kentucky (Lexington)",
+   "jurisdiction": "Lexington-Fayette Urban County Government (LFUCG), KY",
+   "type": "consolidated",
+   "code": {
+    "platform": "amlegal",
+    "url": "https://codelibrary.amlegal.com/codes/lexingtonfayettecoky/latest/lexingtonfayettecoky_zone/0-0-0-1",
+    "fetchable_route": "amlegal pages fetch directly; Zoneomics mirror at zoneomics.com/code/lexington-KY as backup",
+    "codified_through": "observed through Ord. 050-2025 (B-3 amendment, eff. 2025-07-01)"
+   },
+   "zoning_map": {
+    "url": "https://www.lexingtonky.gov/working/development-zoning/zoning-ordinance",
+    "parcel_queryable": null
+   },
+   "parcel_gis": {
+    "url": null,
+    "provider": "Fayette County PVA",
+    "fetchable": null
+   },
+   "permits": {
+    "url": null,
+    "system": null,
+    "public_search": null
+   },
+   "agendas": {
+    "url": null,
+    "platform": null
+   },
+   "verified": "2026-07-09",
+   "notes": "One countywide ordinance (no city/county split). No minimum parking citywide. Use variances prohibited (§7-6(b)(2)). Comp plan = Imagine Lexington 2045 (Placetypes via Placebuilder; KRS 100.213 findings). WARNING: platform 'future land use' fields are PVA current-use codes, NOT placetypes. Council rejected UK-area student rezoning 8-7 Nov 2025 (Aylesford/Core Spaces — historic demolition). Infill & Redevelopment Area allows 50% BoA parking reduction."
+  },
+  {
+   "market": "Missouri (Columbia)",
+   "jurisdiction": "City of Columbia, MO",
+   "type": "city",
+   "code": {
+    "platform": "municode",
+    "url": "https://library.municode.com/mo/columbia/codes/code_of_ordinances?nodeId=COORCOMI_CH29UNDECO",
+    "fetchable_route": "none - Municode 403s automated fetches; use browser or ArcGIS REST below",
+    "codified_through": "unverified (UDC adopted 2017 per snippet, Ord. 23117 - unconfirmed)"
+   },
+   "zoning_map": {
+    "url": "https://experience.arcgis.com/experience/6f3861f1e730435182b939631f4731aa",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://report.boonemo.gov/mrcjava/servlet/AS00_MP.I00240s",
+    "provider": "Boone County in-house (plain HTML, no login)",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://energov.como.gov/EnerGov_Prod/SelfService",
+    "system": "energov",
+    "public_search": null
+   },
+   "agendas": {
+    "url": "https://gocolumbiamo.legistar.com/Calendar.aspx",
+    "platform": "legistar"
+   },
+   "verified": "2026-07-17",
+   "notes": "MACHINE ROUTE: ArcGIS REST zoning service https://gis.gocolumbiamo.com/arcgis/rest/services/BASEMAPS/Zoning/MapServer (verified; JSON query, City Zoning + Overlay layers) - bypasses the JS viewer. EnerGov CSS is an Angular shell, no-login search unconfirmed. Zoning skill already validated in this market (R-MF, sites A1/A2/B2/B3)."
+  },
+  {
+   "market": "Purdue (West Lafayette)",
+   "jurisdiction": "Tippecanoe County Area Plan Commission / City of West Lafayette, IN",
+   "type": "county",
+   "code": {
+    "platform": "custom",
+    "url": "https://www.tippecanoe.in.gov/DocumentCenter/View/37843",
+    "fetchable_route": "direct PDF download (>10MB - stream it); city general code on Municode is 403-blocked",
+    "codified_through": "UZO summer-2023 ed., amended through Amendment #124 (May 2026) per tippecanoe.in.gov/399 (fetched)"
+   },
+   "zoning_map": {
+    "url": "https://maps.tippecanoe.in.gov/Html5/index.html?viewer=Zoning",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://beacon.schneidercorp.com/?site=TippecanoeCountyIN",
+    "provider": "Beacon/Schneider",
+    "fetchable": false
+   },
+   "permits": {
+    "url": "https://www.westlafayette.in.gov/services/permits/building-permits",
+    "system": null,
+    "public_search": null
+   },
+   "agendas": {
+    "url": "https://www.tippecanoe.in.gov/AgendaCenter",
+    "platform": "civicplus (APC+BZA); Granicus for City Council (westlafayette.granicus.com)"
+   },
+   "verified": "2026-07-17",
+   "notes": "ZONING IS COUNTY-WIDE: Tippecanoe County Unified Zoning Ordinance administered by the Area Plan Commission - rezones/PDs/variances via APC/BZA (3rd Wed 6pm), NOT the city. County permit search explicitly EXCLUDES West Lafayette - city permits via WL Building Dept (222 N Chauncey); vendor unknown, westlafayette.in.gov is site-wide bot-blocked. Zoning viewer is Geocortex HTML5 (JS-only)."
+  },
+  {
+   "market": "Wisconsin (Madison)",
+   "jurisdiction": "City of Madison, WI",
+   "type": "city",
+   "code": {
+    "platform": "municode",
+    "url": "https://library.municode.com/wi/madison/codes/code_of_ordinances?nodeId=COORMAWIVOIICH20--31_CH28ZOCOOR",
+    "fetchable_route": "none - Municode 403; Zoning Districts layer on data-cityofmadison.opendata.arcgis.com for API access",
+    "codified_through": "unverified"
+   },
+   "zoning_map": {
+    "url": "https://cityofmadison.maps.arcgis.com/apps/webappviewer/index.html?id=89737c066cda41eea5d986dd71291576",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://accessdane.danecounty.gov/",
+    "provider": "Access Dane (fetched OK; owner/address/parcel search)",
+    "fetchable": true
+   },
+   "permits": {
+    "url": "https://elam.cityofmadison.com/CitizenAccess/Cap/CapHome.aspx?module=Permitting&TabName=Home",
+    "system": "accela",
+    "public_search": true
+   },
+   "agendas": {
+    "url": "https://madison.legistar.com/Calendar.aspx",
+    "platform": "legistar"
+   },
+   "verified": "2026-07-17",
+   "notes": "Most machine-friendly market verified so far: Accela Citizen Access permit search with NO login (50+ record types); open-data zoning layer. Rezoning process (city page, fetched): Plan Commission recommends -> Council adopts, ~10-12 weeks, 30-day alder/neighborhood pre-notice; PD districts (Sec. 28.091) require Urban Design Commission review."
+  },
+  {
+   "market": "Arkansas (Fayetteville)",
+   "jurisdiction": "City of Fayetteville, AR",
+   "type": "city",
+   "code": {
+    "platform": "municode",
+    "url": "https://library.municode.com/ar/fayetteville/codes/code_of_ordinances?nodeId=CD_ORD_TITXVUNDECO",
+    "fetchable_route": "none - Municode 403; use ArcGIS REST below for districts/overlays",
+    "codified_through": "unverified (Ord. 6986, 3-17-2026 per snippet)"
+   },
+   "zoning_map": {
+    "url": "https://maps.fayetteville-ar.gov/zoning/",
+    "parcel_queryable": true
+   },
+   "parcel_gis": {
+    "url": "https://www.actdatascout.com/RealProperty/Arkansas/Washington",
+    "provider": "actDataScout (Washington County)",
+    "fetchable": false
+   },
+   "permits": {
+    "url": "https://egov.fayetteville-ar.gov/energov_prod/selfservice#/home",
+    "system": "energov",
+    "public_search": null
+   },
+   "agendas": {
+    "url": "https://fayettevillear.portal.civicclerk.com/",
+    "platform": "civicclerk (legacy Granicus archive; Laserfiche WebLink at documents.fayetteville-ar.gov)"
+   },
+   "verified": "2026-07-17",
+   "notes": "MACHINE ROUTE: ArcGIS REST https://maps.fayetteville-ar.gov/server/rest/services/Zoning/MapServer (verified; JSON, 2000-record cap) incl. overlays: Hillside/Hilltop, Design Overlay, Enduring Green Network, Streamside Protection. UDC = Title XV (Ch. 160/161). New Sec. 161.36 Urban Corridor district per snippets - unverified. City says in-person map at 125 W Mountain is official."
+  }
+ ]
 }
