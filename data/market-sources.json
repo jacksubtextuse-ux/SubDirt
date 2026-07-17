@@ -51,16 +51,16 @@
     "fetchable": false
    },
    "permits": {
-    "url": null,
-    "system": null,
-    "public_search": null
+    "url": "https://clemsonsc-energovpub.tylerhost.net/Apps/SelfService",
+    "system": "energov",
+    "public_search": false
    },
    "agendas": {
     "url": "https://www.clemsoncity.org/AgendaCenter",
     "platform": "civicplus"
    },
    "verified": "2026-07-17",
-   "notes": "CM district substantially amended post-2022 ($30/SF contribution >5 stories; Strode-block 3-story base/5-story cap; 30-ft rear Type E buffer). No FAR/density/coverage caps in CM. All large PBSH since 2023 entitled via negotiated PD, not straight rezoning. BAR Certificate of Approval precedes building permit. Election: 3 council seats Nov 3, 2026."
+   "notes": "CM district substantially amended post-2022 ($30/SF contribution >5 stories; Strode-block 3-story base/5-story cap; 30-ft rear Type E buffer). No FAR/density/coverage caps in CM. All large PBSH since 2023 entitled via negotiated PD, not straight rezoning. BAR Certificate of Approval precedes building permit. Election: 3 council seats Nov 3, 2026. PERMITS (pilot 2026-07-17): EnerGov CSS v2024.4 Angular SPA - JSON search endpoint exists (POST /apps/selfservice/api/energov/search/search) but 500s on synthetic payloads; needs one-time headless-browser payload capture (Playwright). Fallback: PD ordinances on CivicPlus DocumentCenter (/DocumentCenter/View/{id}, stable GETs - e.g. View/898 = HUB PD-22, View/896 = MODA PD-21)."
   },
   {
    "market": "Kentucky (Lexington)",
@@ -82,16 +82,16 @@
     "fetchable": null
    },
    "permits": {
-    "url": null,
-    "system": null,
-    "public_search": null
+    "url": "https://aca-prod.accela.com/LEXKY/Default.aspx",
+    "system": "accela",
+    "public_search": true
    },
    "agendas": {
     "url": null,
     "platform": null
    },
-   "verified": "2026-07-09",
-   "notes": "One countywide ordinance (no city/county split). No minimum parking citywide. Use variances prohibited (§7-6(b)(2)). Comp plan = Imagine Lexington 2045 (Placetypes via Placebuilder; KRS 100.213 findings). WARNING: platform 'future land use' fields are PVA current-use codes, NOT placetypes. Council rejected UK-area student rezoning 8-7 Nov 2025 (Aylesford/Core Spaces — historic demolition). Infill & Redevelopment Area allows 50% BoA parking reduction."
+   "verified": "2026-07-17",
+   "notes": "One countywide ordinance (no city/county split). No minimum parking citywide. Use variances prohibited (§7-6(b)(2)). Comp plan = Imagine Lexington 2045 (Placetypes via Placebuilder; KRS 100.213 findings). WARNING: platform 'future land use' fields are PVA current-use codes, NOT placetypes. Council rejected UK-area student rezoning 8-7 Nov 2025 (Aylesford/Core Spaces — historic demolition). Infill & Redevelopment Area allows 50% BoA parking reduction. PERMITS (pilot-verified 2026-07-17): Accela ACA fully scriptable - GET keyword search /LEXKY/Cap/GlobalSearchResults.aspx?QueryText=; row links are __doPostBack (replay with __VIEWSTATE, no cookies) yielding permanent CapDetail.aspx GET URLs; rich fields (valuation, contractor, units, SF). Record scheme BLD-CNC-YY-#####. Quirk: future-dated File Date fields observed. Agency Counter (ex-BuildingEye) is JS-only; Citizen Connect is login-only."
   },
   {
    "market": "Missouri (Columbia)",

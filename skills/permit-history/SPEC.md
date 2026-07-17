@@ -27,12 +27,30 @@ planning/zoning case numbers — with type, status, key dates, valuation, and co
 contractor) + portal-access notes feeding back into the registry. Batch mode: one Excel workbook per
 run (xlsx-author pattern; one sheet per project + summary sheet).
 
-**Pilot (July 2026, running):** VERVE Lexington (185 E Maxwell St, LFUCG) + HUB Clemson (Keowee
-Trail, Clemson SC) — chosen to test two different portal stacks and produce immediately useful data.
-Pilot findings will define the registry's `permits` fields and this skill's SKILL.md.
+**Pilot results (July 17, 2026) — capability proven, portal-class-dependent:**
+- **Accela ACA (LFUCG/Lexington): production-ready today.** No-login GET keyword search
+  (`/LEXKY/Cap/GlobalSearchResults.aspx?QueryText=`); row links are ASP.NET `__doPostBack` — replay
+  with `__VIEWSTATE` (no cookies/`__EVENTVALIDATION`) to mint **permanently GET-able
+  `CapDetail.aspx` URLs**. Full pull achieved for VERVE Lexington: 12 records — building permit
+  (BLD-CNC-25-00122: $68,690,050 project cost, 381,355 SF, 7 stories, 275 units, GC Southern
+  Building Group), fire suppression, land disturbance (Issued 5/2/2026), demolition (Complete),
+  zone change PLN-MAR-25-00005 (Complete 3/2/2025), two major development plans, minor plat.
+  ~30 lines of Python to script.
+- **Tyler EnerGov CSS (Clemson): the hard class.** Angular SPA; its JSON search endpoint exists but
+  500s on synthetic payloads — needs a one-time headless-browser (Playwright) capture of the real
+  search POST body, then likely scriptable; version-fragile. Fallback that worked: PD ordinances on
+  CivicPlus DocumentCenter (stable `/DocumentCenter/View/{id}` GETs) + news/agenda trail.
+- **Estimate: ~60–70% of permit history is pullable unattended**; the rest needs browser automation.
 
-**Open design questions (settle after pilot):**
-- Batch cadence for the 47-project back-catalog: one-time sweep vs. monitored (permits change status;
-  a quarterly refresh loop may be worth a cron).
+**Registry fields per market** (now being captured in `data/market-sources.json` notes): portal
+vendor + version; canonical search URL and GET-ability; auth/session requirements; record-numbering
+scheme; fallback evidence sources (DocumentCenter/AgendaCenter paths); known data quirks (e.g.,
+LFUCG future-dated File Date fields — quote portal data as shown, flag anomalies).
+
+**Open design questions (settle before the 47-project sweep):**
+- Batch cadence: one-time sweep vs. monitored (permits change status; a quarterly refresh cron may
+  be worth it — statuses like "Awaiting Payment" → "Issued" are the signal).
 - Where results live: repo (no — project data), SharePoint per-project folders vs. one master
   workbook in the Development tracking folder.
+- Whether to stand up Playwright for the EnerGov-class portals now or triage those markets to
+  fallback-evidence mode.
