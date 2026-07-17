@@ -201,6 +201,20 @@ When run as part of a full feasibility effort, this skill's outputs feed the fea
 legal/regulatory section and its risks/mitigants table; keep the memo's determinations (path, months,
 rating) stated crisply enough to be lifted verbatim.
 
+## Research tactics (learned on live runs)
+
+- **JS-blocked code hosts have fetchable back doors.** encodeplus's doc-viewer is a JS shell, but its
+  print endpoint (`doc-view.aspx?secid=####&print=1`) serves the live adopted text; its "eReader"
+  flipbook pages are often a **stale snapshot of an older codification** — check the codification date
+  and, where the two conflict, the live endpoint controls. Municode/AmLegal have similar printable
+  routes. Never settle for a secondary summary when a print endpoint exists.
+- **Date the client's own numbers.** Program workbooks and prior conformance analyses frequently
+  encode superseded code figures (old fees, old buffers, old ratios). Re-verify every number that
+  drives cost or height against the live text before treating the client's basis as fact — a
+  program-vs-live-code discrepancy table is often the most valuable section of the memo.
+- County GIS/qPublic frequently 403s automated fetches — when parcel-level zoning can't be verified,
+  say so, cite the official zoning map's limits, and make the zoning verification letter open item #1.
+
 ## Environment notes
 - Document generation uses Python: `pip install python-docx openpyxl --break-system-packages` (the
   flag is required in Cowork VMs; harmless elsewhere).
